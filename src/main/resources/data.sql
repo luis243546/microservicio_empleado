@@ -1,0 +1,1 @@
+INSERT INTO empleado (dni, nombre, ap_pat, ap_mat, fecha_nac, horas_lab) VALUES ('123456789', 'Juan', 'Perez', 'Gomez', '1990-01-01', 40),('987654321', 'Maria', 'Gomez', 'Lopez', '1995-05-15', 35);
