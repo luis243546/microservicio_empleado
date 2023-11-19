@@ -2,27 +2,20 @@ package com.empleado.empleado.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.empleado.empleado.entity.Empleado;
-import com.empleado.empleado.repository.EmpleadoRepository;
 
 @Service
-public class EmpleadoService {
+public interface EmpleadoService {
 
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
+    public List<Empleado> listar();
+	
+	public Empleado verUno(Long id);
 
-    @Transactional(readOnly = true)
-    public List<Empleado> findAll() {
-        return (List<Empleado>) empleadoRepository.findAll();
-    }
+    public Empleado registrar(Empleado empleado);
 
-    @Transactional(readOnly = true)
-    public Empleado findById(String dni) {
-        return empleadoRepository.findById(dni).orElse(null);
-    }
+    public Empleado actualizar(Empleado empleado);
 
+    public void eliminar(Empleado empleado);
 }
