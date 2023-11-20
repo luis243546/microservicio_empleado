@@ -23,7 +23,7 @@ public class EmpleadoController {
 		return empleadoService.listar();
 	}
 
-	@GetMapping("/ver/{id}")
+	@GetMapping("/enlistar/{id}")
 	public Empleado verUno(@PathVariable Long id) {
 		return empleadoService.verUno(id);
 	}
@@ -33,14 +33,14 @@ public class EmpleadoController {
 		return empleadoService.registrar(empleado);
 	}
 
-	@PutMapping("/actualizar2")
-	public Empleado actualizar(@RequestBody Empleado empleado){
-		return empleadoService.actualizar(empleado);
+	@PutMapping("/actualizar2/{id}")
+	public Empleado actualizar(@RequestBody Empleado empleado, @PathVariable Long id){
+		return empleadoService.actualizar(empleado,id);
 	}
 
 	@DeleteMapping("/eliminar2/{id}")
-	public void eliminar(@RequestBody Empleado empleado){
-		empleadoService.eliminar(empleado);
+	public void eliminar(@PathVariable Long id){
+		empleadoService.eliminar(id);
 	}
 
 }

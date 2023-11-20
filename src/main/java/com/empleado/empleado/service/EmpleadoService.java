@@ -15,7 +15,7 @@ public interface EmpleadoService {
 
     public Empleado registrar(Empleado empleado);
 
-    public Empleado actualizar(Empleado empleado);
+    public Empleado actualizar(Empleado empleado, Long id);
 
-    public void eliminar(Empleado empleado);
+    public void eliminar(Long id);
 }
